@@ -18,7 +18,6 @@ app.get("/", (request, response) => {
 
 
  var dbConn = mysql.createPool({
-    connectionLimit : 10,
     host: "46.17.172.154",
     port:'3306',
     user: "u960615773_mobile",
