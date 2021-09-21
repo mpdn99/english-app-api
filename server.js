@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
     user: "u960615773_mobile",
     password: "Istech123",
     database: "u960615773_bunny2"
-    
+
 });
 
 // app.get('/category', function (req, res) {
@@ -39,7 +39,7 @@ app.get('/category/:id', function (req, res) {
     }
     dbConn.query('SELECT * FROM tests where category_id=?', category_id, function (error, results, fields) {
      if (error) throw error;
-      return res.send({ error: false, data: results, message: 'category list.' });
+      return res.send(results);
     });
 });
 
@@ -57,7 +57,7 @@ app.get('/test/:id', function (req, res) {
     }
     dbConn.query('SELECT * FROM parts where test_id=?', test_id, function (error, results, fields) {
      if (error) throw error;
-      return res.send({ error: false, data: results, message: 'test list.' });
+     return res.send(results);
     });
 });
 
@@ -75,7 +75,7 @@ app.get('/test/part/:id', function (req, res) {
     }
     dbConn.query('SELECT * FROM question where part_id=?', part_id, function (error, results, fields) {
      if (error) throw error;
-      return res.send({ error: false, data: results, message: 'question list.' });
+     return res.send(results);
     });
 });
 
@@ -86,7 +86,7 @@ app.get('/test/part/question/:id', function (req, res) {
     }
     dbConn.query('SELECT * FROM answers where question_id=?', question_id, function (error, results, fields) {
      if (error) throw error;
-      return res.send({ error: false, data: results, message: 'answers list.' });
+     return res.send(results);
     });
 });
 
