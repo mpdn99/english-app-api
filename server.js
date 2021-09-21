@@ -22,6 +22,7 @@ app.get("/", (request, response) => {
     user: "u960615773_mobile",
     password: "Istech123",
     database: "u960615773_bunny2"
+    
 });
 
 // app.get('/category', function (req, res) {
