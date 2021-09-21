@@ -16,7 +16,9 @@ app.get("/", (request, response) => {
     response.sendStatus(200);
 });
 
- var dbConn = mysql.createConnection({
+
+ var dbConn = mysql.createPool({
+    connectionLimit : 10,
     host: "46.17.172.154",
     port:'3306',
     user: "u960615773_mobile",
