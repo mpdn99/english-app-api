@@ -26,13 +26,6 @@ app.get("/", (request, response) => {
 
 });
 
-// app.get('/category', function (req, res) {
-//     dbConn.query('SELECT * FROM category', function (error, results, fields) {
-//         if (error) throw error;
-//         return res.send({ error: false, data: results, message: 'category list.' });
-//     });
-// });
-
 app.get('/category/:id', function (req, res) {
     let category_id = req.params.id;
     if (!category_id) {
@@ -43,13 +36,6 @@ app.get('/category/:id', function (req, res) {
       return res.send(results);
     });
 });
-
-// app.get('/test', function (req, res) {
-//     dbConn.query('SELECT * FROM tests', function (error, results, fields) {
-//         if (error) throw error;
-//         return res.send({ error: false, data: results, message: 'tests list.' });
-//     });
-// });
 
 app.get('/test/:id', function (req, res) {
     let test_id = req.params.id;
@@ -62,19 +48,13 @@ app.get('/test/:id', function (req, res) {
     });
 });
 
-// app.get('/part/', function (req, res) {
-//     dbConn.query('SELECT * FROM questions', function (error, results, fields) {
-//         if (error) throw error;
-//         return res.send({ error: false, data: results, message: 'questions list.' });
-//     });
-// });
 
 app.get('/test/part/:id', function (req, res) {
     let part_id = req.params.id;
     if (!part_id) {
      return res.status(400).send({ error: true, message: 'Please provide part_id' });
     }
-    dbConn.query('SELECT * FROM question where part_id=?', part_id, function (error, results, fields) {
+    dbConn.query('SELECT * FROM questions where part_id=?', part_id, function (error, results, fields) {
      if (error) throw error;
      return res.send(results);
     });
